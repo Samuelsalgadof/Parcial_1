@@ -32,6 +32,11 @@ public class EmpresaController {
     @FXML
     private Button btnGuardarVehiculoTransporte;
 
+
+    @FXML
+    private Button btnCalcularCargaMax;
+
+
     @FXML
     private Button btnObtenerMayoresEdad;
 
@@ -97,6 +102,12 @@ public class EmpresaController {
 
     @FXML
     private TextArea txtResultadosVehiculoTrasporte;
+
+    @FXML
+    void onCalcularCargaMax(ActionEvent event) {
+        CargaMax();
+    }
+
 
     @FXML
     void onCalcularNumPasajeros(ActionEvent event) {
@@ -181,6 +192,10 @@ public class EmpresaController {
     private void mayoresDeEdad() {
         String resultadoEdad = String.valueOf(modelFactory.calcularMayoresEdad());
         txtResultadoUsuario.setText("Usuarios mayores de edad: " + resultadoEdad);
+    }
+    private void CargaMax(){
+        String resultadoCargaMax = String.valueOf(modelFactory.calcularCarga());
+        txtResultadoVehiculoCarga.setText("Los camiones que tienen sobrecarga son: " + resultadoCargaMax);
     }
 
     @FXML

@@ -114,7 +114,18 @@ public class EmpresaTransporte {
         return contador;
     }
 
+    public double calcularCarga(){
+        int contadorCarga = 0;
+        for (VehiculoCarga vehiculoCarga : this.vehiculoCargaList){
+            if (vehiculoCarga.getCapacidadCarga() > 500){
+                contadorCarga++;
+            }
+        }
+        return contadorCarga;
+    }
 }
+
+
 
 
 

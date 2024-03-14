@@ -1,10 +1,8 @@
 package co.edu.uniquindio.parcial1fx.transporteapp.Factory;
 
+import co.edu.uniquindio.parcial1fx.transporteapp.Model.*;
+import co.edu.uniquindio.parcial1fx.transporteapp.Model.Builder.VehiculoCargaBuilder;
 import co.edu.uniquindio.parcial1fx.transporteapp.Model.Builder.VehiculoTransporteBuilder;
-import co.edu.uniquindio.parcial1fx.transporteapp.Model.EmpresaTransporte;
-import co.edu.uniquindio.parcial1fx.transporteapp.Model.Propietario;
-import co.edu.uniquindio.parcial1fx.transporteapp.Model.Usuario;
-import co.edu.uniquindio.parcial1fx.transporteapp.Model.VehiculoTransporte;
 
 import java.util.ArrayList;
 
@@ -65,6 +63,15 @@ public class ModelFactory {
                 .build();
         propietario.getVehiculoList().add(vehiculoTransporte);
         empresaTransporte.getVehiculoTransporteList().add(vehiculoTransporte);
+
+        VehiculoCarga vehiculoCarga1 = new VehiculoCargaBuilder()
+                .placa("NS 200")
+                .modelo("2035")
+                .marca("Yamaha")
+                .color("Negro")
+                .capacidadCarga(521)
+                .build();
+        empresaTransporte.getVehiculoCargaList().add(vehiculoCarga1);
     }
 
     public boolean crearVehiclo(String placa, String modelo, String marca, String color){
@@ -78,4 +85,6 @@ public class ModelFactory {
     public int calcularMayoresEdad(){
         return empresaTransporte.calcularMayoresEdad();
     }
+
+    public double calcularCarga(){return empresaTransporte.calcularCarga();}
 }
